@@ -8,8 +8,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //
-//  Function Name   :   ChkAlpha
-//  Description     :   Used to Check whether it is character or not
+//  Function Name   :   DisplaySchedule
+//  Description     :   Used to Display Exam Timing
 //  Input           :   Character
 //  Output          :   String
 //  Author          :   Prathamesh Rajesh Bawane
@@ -17,20 +17,25 @@
 //
 ////////////////////////////////////////////////////////////////////////////////////////
 
-#define TRUE 1
-#define FALSE 0
 
-typedef int BOOL;
 
-BOOL ChkAlpha(char ch)
+void DisplaySchedule(char chDiv)
 {   
-    if( (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') )
+    if( chDiv == 'A')
     {
-        return TRUE;
+        printf("Your Exam 7 AM");
     }
-    else
+    else if( chDiv == 'B')
     {
-        return FALSE;
+        printf("Your Exam 8:30 AM");
+    }
+     else if( chDiv == 'C')
+    {
+        printf("Your Exam 9:20 AM");
+    }
+     else if( chDiv == 'D')
+    {
+        printf("Your Exam 10:30 AM");
     }
 }
 
@@ -44,21 +49,10 @@ BOOL ChkAlpha(char ch)
 int main()
 {
     char cValue = '\0';
-    BOOL bRet = FALSE;
-
-    printf("Enter the character : \n");
+    printf("Enter your Division : \n");
     scanf(" %c",&cValue);
 
-    bRet = ChkAlpha(cValue);
-
-    if(bRet == TRUE)
-    {
-        printf("It is a Character");
-    }
-    else
-    {
-       printf("It is not a Character"); 
-    }
+    DisplaySchedule(cValue);
 
     return 0;
 }
